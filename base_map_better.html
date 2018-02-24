@@ -16,11 +16,8 @@
   <div id="map"></div>
 
   <script>
-
   // initialize the map
-
   var map = L.map('map').setView([42.35, -71.08], 13);
-
   // load a tile layer
   L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
     {
@@ -28,9 +25,7 @@
       maxZoom: 17,
       minZoom: 9
     }).addTo(map);
-
   // load GeoJSON from an external file
-
 $.getJSON("https://maptimeboston.github.io/leaflet-intro/rodents.geojson",function(data){
   var rodents = L.geoJson(data,{
     pointToLayer: function(feature,latlng){
@@ -43,8 +38,6 @@ $.getJSON("https://maptimeboston.github.io/leaflet-intro/rodents.geojson",functi
   clusters.addLayer(rodents);
   map.addLayer(clusters);
 });
-
-
   </script>
 </body>
 </html>
